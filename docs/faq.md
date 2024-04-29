@@ -346,7 +346,11 @@ You can use Ollama to deploy local LLM. See [here](https://github.com/infiniflow
 
 ### Do I need to connect to Redis?
 
-No, connecting to Redis is not required. 
+No, connecting to Redis is not required. But just incase you were geting `fetching file timeout` error and redis error in the server logs like so 
+```
+\[EXCEPTION\]exist0180ba7004d611efa9540242ac150005/<filename>.pdf\|\|Error -3 connecting to redis:6379. Temporary failure in name resolution.
+```
+you can uncomment the redis container section and the redis volume in the `docker-compose-base.yml` file to run redis with the project and see if it fixes your problem
 
 ### `Error: Range of input length should be [1, 30000]`
 
